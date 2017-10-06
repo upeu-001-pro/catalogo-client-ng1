@@ -273,34 +273,6 @@ app.constant("ROUTERS", [ {
     }
 } ]);
 
-app.config(function($translateProvider) {
-    $translateProvider.translations("en-us", {
-        HEADLINE: "XSS possible!",
-        PARAGRAPH: "Hello {{username}}!",
-        TITLE: "Hello",
-        "hola foo": "This is a paragraph.",
-        "en-us": "English",
-        "es-pe": "Spanish Peruvian"
-    });
-});
-
-app.config(function($translateProvider) {
-    $translateProvider.translations("es-pe", {
-        HEADLINE: "XSS possible!",
-        PARAGRAPH: "Hola es-pe {{username}}!",
-        TITLE: "Hola",
-        "hola foo": "This is a paragraph.",
-        "en-us": "Inglés",
-        "es-pe": "Español Perú",
-        categoria: "Categoría",
-        categorias: "Categorías",
-        "trabajar con": "Trabajar con",
-        codigo: "Código",
-        nombre: "Nombre",
-        estado: "Estado"
-    });
-});
-
 app.controller("AutorCtrl", function($scope, $state, $stateParams, catalogoService, $window, $mdDialog, $log, toastr, $filter) {
     $scope.fields = "nombre";
     var params = {};
@@ -735,6 +707,34 @@ app.controller("BottomSheetExample", function($scope, $timeout, $mdBottomSheet, 
         $window.location = clickedItem.url;
         $mdBottomSheet.hide(clickedItem);
     };
+});
+
+app.config(function($translateProvider) {
+    $translateProvider.translations("en-us", {
+        HEADLINE: "XSS possible!",
+        PARAGRAPH: "Hello {{username}}!",
+        TITLE: "Hello",
+        "hola foo": "This is a paragraph.",
+        "en-us": "English",
+        "es-pe": "Spanish Peruvian"
+    });
+});
+
+app.config(function($translateProvider) {
+    $translateProvider.translations("es-pe", {
+        HEADLINE: "XSS possible!",
+        PARAGRAPH: "Hola es-pe {{username}}!",
+        TITLE: "Hola",
+        "hola foo": "This is a paragraph.",
+        "en-us": "Inglés",
+        "es-pe": "Español Perú",
+        categoria: "Categoría",
+        categorias: "Categorías",
+        "trabajar con": "Trabajar con",
+        codigo: "Código",
+        nombre: "Nombre",
+        estado: "Estado"
+    });
 });
 
 app.factory("catalogoService", function($resource, apiUrl) {

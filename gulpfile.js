@@ -26,7 +26,7 @@ var config = {
     html: ['./src/app/views/*.html', './src/app/views/**/*.html'],
     htmldirectives: ['./app/directives/*.html', './app/directives/**/*.html'],
     images: './src/media/**/*',
-    htmlindex: ['public/index.html',],
+    htmlindex: ['./public/index.html',],
     dest: './public/dist',
     umd: {
 
@@ -51,7 +51,7 @@ gulp.task('serve-browser-sync', function () {
         port: 9003,
         host: '127.0.0.1',
         server: {
-            baseDir: "public"
+            baseDir: "public/"
         },
         httpsx: {
             key: "custom.key",
@@ -79,9 +79,9 @@ gulp.task('serve-browser-sync', function () {
     gulp.watch(config.js).on('change', reload);
     gulp.watch(config.css).on('change', reload);
     gulp.watch(config.html).on('change', reload);
-    gulp.watch(config.htmlDirectives).on('change', reload);
+    gulp.watch(config.htmldirectives).on('change', reload);
     gulp.watch(config.images).on('change', reload);
-    //gulp.watch(config.htmlIndex).on('change', reload);
+    //gulp.watch(config.htmlindex).on('change', reload);
    
 
 });
@@ -196,7 +196,7 @@ gulp.task('watch', function () {
     gulp.watch(config.js, ['js-min']);
     gulp.watch(config.css, ['styles']);
     gulp.watch(config.html, ['html']);
-    gulp.watch(config.htmlDirectives, ['htmldirectives']);
+    gulp.watch(config.htmldirectives, ['htmldirectives']);
     gulp.watch(config.images, ['images']);
 });
 

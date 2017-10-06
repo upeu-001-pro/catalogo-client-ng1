@@ -27,7 +27,7 @@
     "postinstall": "./node_modules/.bin/bower install"
   },
   "keywords": [
-    "scripts js"
+    "gulp default "
   ],
   "author": "practian",
   "license": "ISC"

@@ -1,5 +1,5 @@
 # deactivate directory "src" for production deploy
-src
+#src
 *.pyc
 ve_*
 *- copia*
